@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div id="chatbox">
+      <h2>Chatbox</h2>
+      <form id="chat-form" method="post" action="/chatbox-send">
+        <input type="text" id="message" name="message" placeholder="Type your message here..." required />
+        <button type="submit">Send</button>
+      </form>
+      <div id="messages">
+        <% if (messages && messages.length > 0) { %>
+          <div class="message"><%= messages %></div>
+        <% } else { %>
+          <div class="message">No messages yet.</div>
+        <% } %>
+      </div>
+  </body>
+</html>
