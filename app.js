@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 //Load environment variables from .env file
-require('dotenv').config();
+// require('dotenv').config();
 
 var app = express();
 

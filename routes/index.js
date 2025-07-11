@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../config/db');
+// var db = require('../config/db');
 const { GoogleGenAI } = require("@google/genai");
 
 /* GET home page. */
@@ -9,15 +9,15 @@ router.get('/', function(req, res, next) {
 });
 
 // Route to test database connection
-router.get('/db-test', function(req, res) {
-  db.query('SELECT 1', function(err, results) {
-    if (err) {
-      res.status(500).send('Database connection failed: ' + err.message);
-    } else {
-      res.send('Database connected successfully!');
-    }
-  });
-});
+// router.get('/db-test', function(req, res) {
+//   db.query('SELECT 1', function(err, results) {
+//     if (err) {
+//       res.status(500).send('Database connection failed: ' + err.message);
+//     } else {
+//       res.send('Database connected successfully!');
+//     }
+//   });
+// });
 
 
 //route to the chatbox
