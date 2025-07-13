@@ -32,7 +32,8 @@ router.post('/save-user', function(req, res, next) {
       if(err) {
         return res.status(500).send('Error saving user: ' + err.message);
       }
-      res.send('User saved successfully!');
+      req.flash('success', 'User registered successfully');
+      res.redirect('/chatbox'); // Redirect to home page after successful signup
     });
   });
 });
