@@ -1,8 +1,68 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #f4f6fb;
 }
 
 a {
   color: #00B7FF;
+}
+
+#chatbox {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px 32px 32px 32px;
+}
+
+#chatbox h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5em;
+}
+
+#chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+#chat-form input[type="text"],
+#chat-form input[type="password"],
+#chat-form input[type="email"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+#chat-form button[type="submit"] {
+  background: #00B7FF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+#chat-form button[type="submit"]:hover {
+  background: #0099cc;
+}
+
+#messages {
+  min-height: 40px;
+}
+
+.message {
+  background: #eaf6ff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  color: #222;
+  font-size: 1em;
 }

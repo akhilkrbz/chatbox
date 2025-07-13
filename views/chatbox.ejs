@@ -9,6 +9,7 @@
     <p>Welcome to <%= title %></p>
     <div id="chatbox">
       <h2>Chatbox</h2>
+      <a href="/users/signup"><button id="signup">Signup</button></a>
       <form id="chat-form" method="post" action="/chatbox-send">
         <input type="text" id="message" name="message" placeholder="Type your message here..." required />
         <button type="submit">Send</button>
@@ -20,5 +21,6 @@
           <div class="message">No messages yet.</div>
         <% } %>
       </div>
+    </div>
   </body>
 </html>
