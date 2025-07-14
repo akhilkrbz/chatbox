@@ -3,6 +3,9 @@ var router = express.Router();
 var db = require('../config/db');
 const { GoogleGenAI } = require("@google/genai");
 
+const jwt = require('jsonwebtoken');
+const { isAuthenticated } = require('../middleware/authMiddleware');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -21,9 +24,10 @@ router.get('/db-test', function(req, res) {
 
 
 //route to the chatbox
-router.get('/chatbox', function(req, res) {
-  res.render('chatbox', {title: 'Chatbox', messages: []}); // Render chatbox with an empty message array
+router.get('/chatbox', isAuthenticated, (req, res, next) => {
+  return res.render('chatbox', {title: 'Chatbox', messages: []});
 });
+
 
 
 
