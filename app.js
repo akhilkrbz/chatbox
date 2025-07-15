@@ -13,6 +13,9 @@ var usersRouter = require('./routes/users');
 //Load environment variables from .env file
 require('dotenv').config();
 
+// Initialize Sequelize
+const sequelize = require('./config/db');
+
 var app = express();
 
 // view engine setup
@@ -24,6 +27,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Initialize Sequelize connection
+sequelize.sync().then(() => {
+  console.log('Seq Database connected successfully');
+}).catch(err => {
+  console.error('Unable to connect to the seq database:', err);
+});
 
 // session and flash middleware (must be before routes)
 app.use(session({
