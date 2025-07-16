@@ -7,8 +7,11 @@ var logger = require('morgan');
 const session = require('express-session');
 const flash = require('connect-flash');
 
+const fileUpload = require('express-fileupload');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var swapRouter = require('./routes/swap');
 
 //Load environment variables from .env file
 require('dotenv').config();
@@ -50,8 +53,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(fileUpload()); // Middleware for file uploads
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/swap', swapRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

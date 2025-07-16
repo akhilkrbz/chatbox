@@ -66,3 +66,42 @@ a {
   color: #222;
   font-size: 1em;
 }
+
+.swap-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.swap-form label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.swap-form input[type="file"] {
+  padding: 6px 0;
+  border: none;
+  background: none;
+}
+
+.swap-form button[type="submit"] {
+  background: #00B7FF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.swap-form button[type="submit"]:hover {
+  background: #0099cc;
+}
