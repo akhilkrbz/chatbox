@@ -17,7 +17,7 @@ var swapRouter = require('./routes/swap');
 require('dotenv').config();
 
 // Initialize Sequelize
-const sequelize = require('./config/db');
+// const sequelize = require('./config/db');
 
 var app = express();
 
@@ -32,11 +32,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Initialize Sequelize connection
-sequelize.sync().then(() => {
-  console.log('Seq Database connected successfully');
-}).catch(err => {
-  console.error('Unable to connect to the seq database:', err);
-});
+// sequelize.sync().then(() => {
+//   console.log('Seq Database connected successfully');
+// }).catch(err => {
+//   console.error('Unable to connect to the seq database:', err);
+// });
 
 // session and flash middleware (must be before routes)
 app.use(session({
